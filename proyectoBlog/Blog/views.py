@@ -6,4 +6,4 @@ from Blog.models import *
 
 # Create your views here.
 def inicio(request):
-    return render(request,'Blog/inicio.html')
+    return render(request,'Blog/index.html')
