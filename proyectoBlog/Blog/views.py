@@ -13,12 +13,12 @@ def login(request):
     if request.method == "POST":
         form = loginFormulario(request.POST)
         print(form)
-        if form.is_valid:
+        if form.is_valid():
             data = form.cleaned_data
             usuario = User(username=data["username"],password=data["password"])
             usuario.save()
             return render(request,'Blog/index.html')
     else:
         form = loginFormulario()
-        return render (request,'Blog/login.html', {"formulario":form})
+        return render (request,'Blog/login.html', {"form":form})
     
